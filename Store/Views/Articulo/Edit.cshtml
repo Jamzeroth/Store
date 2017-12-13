@@ -1,0 +1,169 @@
+﻿@model Store.Models.Articulo
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminView.cshtml";
+}
+
+<!--sidebar start-->
+<aside>
+    <div id="sidebar" class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+
+            <p class="centered"><a href="index.html"><img src="~/Content/img/logo.jpg" class="img-circle" width="80" height="80"></a></p>
+            <h5 class="centered">Administrador</h5>
+
+            <li class="mt">
+                <a href="index.html">
+                    <i class="fa fa-star"></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li class="sub-menu">
+                <a href="/Usuario">
+                    <i class="fa fa-user"></i>
+                    <span>Usuarios</span>
+                </a>
+            </li>
+
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-book"></i>
+                    <span>Pedidos</span>
+                </a>
+                <ul class="sub">
+                    <li><a href="/Pedido">Registro</a></li>
+                    <li><a href="/DetallePedido">Detalles</a></li>
+                    <li><a href="/Estado">Estados</a></li>
+                </ul>
+            </li>
+
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-tag"></i>
+                    <span>Ventas</span>
+                </a>
+                <ul class="sub">
+                    <li><a href="/Venta">Registro</a></li>
+                    <li><a href="/DetalleVenta">Detalles</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <a href="javascript:;" class="active">
+                    <i class="fa fa-fire"></i>
+                    <span>Art&iacuteculos</span>
+                </a>
+                <ul class="sub">
+                    <li class="active"><a href="/Articulo">Inventario</a></li>
+                    <li><a href="/Categoria">Categor&iacuteas</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <a href="/Proveedor">
+                    <i class="fa fa-phone"></i>
+                    <span>Proveedores</span>
+                </a>
+            </li>
+            <li class="sub-menu">
+                <a href="/Distribuidor">
+                    <i class=" fa fa-truck"></i>
+                    <span>Distribuidores</span>
+                </a>
+            </li>
+
+        </ul>
+        <!-- sidebar menu end-->
+    </div>
+</aside>
+<!--sidebar end-->
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper site-min-height">
+        <h3><i class="fa fa-angle-right"></i>@ViewBag.Title</h3>
+        <div class="row mt">
+            <div class="col-lg-12">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        <h4>Articulo</h4>
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.id_art)
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.nombre_art, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.nombre_art, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.nombre_art, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.marca_art, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.marca_art, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.marca_art, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.descripcion_art, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.descripcion_art, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.descripcion_art, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.precio_art, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.precio_art, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.precio_art, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.stock_art, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.stock_art, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.stock_art, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.id_cat, "id_cat", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("id_cat", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.id_cat, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.id_pro, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.id_pro, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.id_pro, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Save" class="btn btn-default" />
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div>
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+
+            </div>
+        </div>
+    </section>
+</section>
+<!--main content end-->
+

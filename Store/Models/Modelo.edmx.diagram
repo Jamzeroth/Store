@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a28bef6958794c7a8d351ca36639df4b" Name="Diagram1">
+        <EntityTypeShape EntityType="StoreModel.Articulo" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.Categoria" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.DetallePedido" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.DetalleVenta" Width="1.5" PointX="10.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.Distribuidor" Width="1.5" PointX="5.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.Estado" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.Pedido" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.Proveedor" Width="1.5" PointX="7.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.Usuario" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.Venta" Width="1.5" PointX="8.25" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="StoreModel.FK_Articulo_Categoria" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreModel.FK_DetallePedido_Articulo" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreModel.FK_DetalleVenta_Articulo" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreModel.FK_DetallePedido_Pedido" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreModel.FK_DetalleVenta_Venta" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreModel.FK_Pedido_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreModel.FK_Pedido_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreModel.FK_Venta_Pedido" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreModel.FK_Venta_Usuario" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

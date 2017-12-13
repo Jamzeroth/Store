@@ -1,0 +1,159 @@
+﻿@model IEnumerable<Store.Models.Usuario>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminView.cshtml";
+}
+
+<!--sidebar start-->
+<aside>
+    <div id="sidebar" class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+
+            <p class="centered"><a href="index.html"><img src="~/Content/img/logo.jpg" class="img-circle" width="80" height="80"></a></p>
+            <h5 class="centered">Administrador</h5>
+
+            <li class="mt">
+                <a href="index.html">
+                    <i class="fa fa-star"></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li class="sub-menu">
+                <a href="/Usuario" class="active">
+                    <i class="fa fa-user"></i>
+                    <span>Usuarios</span>
+                </a>
+            </li>
+
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-book"></i>
+                    <span>Pedidos</span>
+                </a>
+                <ul class="sub">
+                    <li><a href="/Pedido">Registro</a></li>
+                    <li><a href="/DetallePedido">Detalles</a></li>
+                    <li><a href="/Estado">Estados</a></li>
+                </ul>
+            </li>
+
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-tag"></i>
+                    <span>Ventas</span>
+                </a>
+                <ul class="sub">
+                    <li><a href="/Venta">Registro</a></li>
+                    <li><a href="/DetalleVenta">Detalles</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-fire"></i>
+                    <span>Art&iacuteculos</span>
+                </a>
+                <ul class="sub">
+                    <li><a href="/Articulo">Inventario</a></li>
+                    <li><a href="/Categoria">Categor&iacuteas</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <a href="/Proveedor">
+                    <i class="fa fa-phone"></i>
+                    <span>Proveedores</span>
+                </a>
+            </li>
+            <li class="sub-menu">
+                <a href="/Distribuidor">
+                    <i class=" fa fa-truck"></i>
+                    <span>Distribuidores</span>
+                </a>
+            </li>
+
+        </ul>
+        <!-- sidebar menu end-->
+    </div>
+</aside>
+<!--sidebar end-->
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper site-min-height">
+        <h3><i class="fa fa-angle-right"></i>@ViewBag.Title</h3>
+        <div class="row mt">
+            <div class="col-lg-12">
+                <p>
+                    @Html.ActionLink("Create New", "Create")
+                </p>
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.nombre_usu)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.apellido_usu)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.cedula_usu)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.telefono_usu)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.direccion_usu)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.correo_usu)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.contra_usu)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.tarjeta_usu)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nombre_usu)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.apellido_usu)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.cedula_usu)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.telefono_usu)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.direccion_usu)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.correo_usu)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.contra_usu)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.tarjeta_usu)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.id_usu }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.id_usu }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.id_usu })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </section>
+</section>
+<!--main content end-->
+

@@ -1,0 +1,134 @@
+﻿@model Store.Models.DetalleVenta
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminView.cshtml";
+}
+
+<!--sidebar start-->
+<aside>
+    <div id="sidebar" class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+
+            <p class="centered"><a href="index.html"><img src="~/Content/img/logo.jpg" class="img-circle" width="80" height="80"></a></p>
+            <h5 class="centered">Administrador</h5>
+
+            <li class="mt">
+                <a href="index.html">
+                    <i class="fa fa-star"></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li class="sub-menu">
+                <a href="/Usuario">
+                    <i class="fa fa-user"></i>
+                    <span>Usuarios</span>
+                </a>
+            </li>
+
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-book"></i>
+                    <span>Pedidos</span>
+                </a>
+                <ul class="sub">
+                    <li><a href="/Pedido">Registro</a></li>
+                    <li><a href="/DetallePedido">Detalles</a></li>
+                    <li><a href="/Estado">Estados</a></li>
+                </ul>
+            </li>
+
+            <li class="sub-menu">
+                <a href="javascript:;" class="active">
+                    <i class="fa fa-tag"></i>
+                    <span>Ventas</span>
+                </a>
+                <ul class="sub">
+                    <li><a href="/Venta">Registro</a></li>
+                    <li class="active"><a href="/DetalleVenta">Detalles</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-fire"></i>
+                    <span>Art&iacuteculos</span>
+                </a>
+                <ul class="sub">
+                    <li><a href="/Articulo">Inventario</a></li>
+                    <li><a href="/Categoria">Categor&iacuteas</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <a href="/Proveedor">
+                    <i class="fa fa-phone"></i>
+                    <span>Proveedores</span>
+                </a>
+            </li>
+            <li class="sub-menu">
+                <a href="/Distribuidor">
+                    <i class=" fa fa-truck"></i>
+                    <span>Distribuidores</span>
+                </a>
+            </li>
+
+        </ul>
+        <!-- sidebar menu end-->
+    </div>
+</aside>
+<!--sidebar end-->
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper site-min-height">
+        <h3><i class="fa fa-angle-right"></i>@ViewBag.Title</h3>
+        <div class="row mt">
+            <div class="col-lg-12">
+                <div>
+                    <h4>DetalleVenta</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.cantidad_dven)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.cantidad_dven)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.precio_dven)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.precio_dven)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Articulo.nombre_art)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Articulo.nombre_art)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Venta.numeracion_ven)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Venta.numeracion_ven)
+                        </dd>
+
+                    </dl>
+                </div>
+                <p>
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.id_dven }) |
+                    @Html.ActionLink("Back to List", "Index")
+                </p>
+
+            </div>
+        </div>
+    </section>
+</section>
+<!--main content end-->
+

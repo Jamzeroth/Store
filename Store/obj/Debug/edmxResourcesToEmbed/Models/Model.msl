@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StoreModelStoreContainer" CdmEntityContainer="StoreEntities">
+    <EntitySetMapping Name="Articulo">
+      <EntityTypeMapping TypeName="StoreModel.Articulo">
+        <MappingFragment StoreEntitySet="Articulo">
+          <ScalarProperty Name="id_art" ColumnName="id_art" />
+          <ScalarProperty Name="nombre_art" ColumnName="nombre_art" />
+          <ScalarProperty Name="marca_art" ColumnName="marca_art" />
+          <ScalarProperty Name="descripcion_art" ColumnName="descripcion_art" />
+          <ScalarProperty Name="precio_art" ColumnName="precio_art" />
+          <ScalarProperty Name="stock_art" ColumnName="stock_art" />
+          <ScalarProperty Name="id_cat" ColumnName="id_cat" />
+          <ScalarProperty Name="id_pro" ColumnName="id_pro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categoria">
+      <EntityTypeMapping TypeName="StoreModel.Categoria">
+        <MappingFragment StoreEntitySet="Categoria">
+          <ScalarProperty Name="id_cat" ColumnName="id_cat" />
+          <ScalarProperty Name="categoria_cat" ColumnName="categoria_cat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetallePedido">
+      <EntityTypeMapping TypeName="StoreModel.DetallePedido">
+        <MappingFragment StoreEntitySet="DetallePedido">
+          <ScalarProperty Name="id_dped" ColumnName="id_dped" />
+          <ScalarProperty Name="id_ped" ColumnName="id_ped" />
+          <ScalarProperty Name="id_art" ColumnName="id_art" />
+          <ScalarProperty Name="cantidad_ped" ColumnName="cantidad_ped" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleVenta">
+      <EntityTypeMapping TypeName="StoreModel.DetalleVenta">
+        <MappingFragment StoreEntitySet="DetalleVenta">
+          <ScalarProperty Name="id_dven" ColumnName="id_dven" />
+          <ScalarProperty Name="id_ven" ColumnName="id_ven" />
+          <ScalarProperty Name="id_art" ColumnName="id_art" />
+          <ScalarProperty Name="cantidad_dven" ColumnName="cantidad_dven" />
+          <ScalarProperty Name="precio_dven" ColumnName="precio_dven" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distribuidor">
+      <EntityTypeMapping TypeName="StoreModel.Distribuidor">
+        <MappingFragment StoreEntitySet="Distribuidor">
+          <ScalarProperty Name="id_dis" ColumnName="id_dis" />
+          <ScalarProperty Name="nombre_dis" ColumnName="nombre_dis" />
+          <ScalarProperty Name="direccion_dis" ColumnName="direccion_dis" />
+          <ScalarProperty Name="telefono_dis" ColumnName="telefono_dis" />
+          <ScalarProperty Name="web_dis" ColumnName="web_dis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estado">
+      <EntityTypeMapping TypeName="StoreModel.Estado">
+        <MappingFragment StoreEntitySet="Estado">
+          <ScalarProperty Name="id_est" ColumnName="id_est" />
+          <ScalarProperty Name="estado_est" ColumnName="estado_est" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pedido">
+      <EntityTypeMapping TypeName="StoreModel.Pedido">
+        <MappingFragment StoreEntitySet="Pedido">
+          <ScalarProperty Name="id_ped" ColumnName="id_ped" />
+          <ScalarProperty Name="id_usu" ColumnName="id_usu" />
+          <ScalarProperty Name="fecha_ped" ColumnName="fecha_ped" />
+          <ScalarProperty Name="id_est" ColumnName="id_est" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proovedor">
+      <EntityTypeMapping TypeName="StoreModel.Proovedor">
+        <MappingFragment StoreEntitySet="Proovedor">
+          <ScalarProperty Name="id_pro" ColumnName="id_pro" />
+          <ScalarProperty Name="nombre_pro" ColumnName="nombre_pro" />
+          <ScalarProperty Name="direccion_pro" ColumnName="direccion_pro" />
+          <ScalarProperty Name="telefono_pro" ColumnName="telefono_pro" />
+          <ScalarProperty Name="web_pro" ColumnName="web_pro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="StoreModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="id_usu" ColumnName="id_usu" />
+          <ScalarProperty Name="nombre_usu" ColumnName="nombre_usu" />
+          <ScalarProperty Name="apellido_usu" ColumnName="apellido_usu" />
+          <ScalarProperty Name="cedula_usu" ColumnName="cedula_usu" />
+          <ScalarProperty Name="telefono_usu" ColumnName="telefono_usu" />
+          <ScalarProperty Name="direccion_usu" ColumnName="direccion_usu" />
+          <ScalarProperty Name="correo_usu" ColumnName="correo_usu" />
+          <ScalarProperty Name="contra_usu" ColumnName="contra_usu" />
+          <ScalarProperty Name="tarjeta_usu" ColumnName="tarjeta_usu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Venta">
+      <EntityTypeMapping TypeName="StoreModel.Venta">
+        <MappingFragment StoreEntitySet="Venta">
+          <ScalarProperty Name="id_ven" ColumnName="id_ven" />
+          <ScalarProperty Name="numeracion_ven" ColumnName="numeracion_ven" />
+          <ScalarProperty Name="id_usu" ColumnName="id_usu" />
+          <ScalarProperty Name="fecha_ven" ColumnName="fecha_ven" />
+          <ScalarProperty Name="subtotal_ven" ColumnName="subtotal_ven" />
+          <ScalarProperty Name="iva_ven" ColumnName="iva_ven" />
+          <ScalarProperty Name="total_ven" ColumnName="total_ven" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
